@@ -2,6 +2,7 @@
 
 :root {
   --primary-color: #e02c6d;
+  --primary-color-tint: #e02c6e6e;
   --white-color: #ffffff;
   --black-color: #3a3a3a;
   --dark-gray: #5e6366;
@@ -159,7 +160,7 @@ a {
 .products {
   margin-bottom: 10rem;
 }
-.products h2 {
+.headline {
   font-size: 2.8rem;
   text-align: center;
   margin-bottom: 3rem;
@@ -249,9 +250,7 @@ a {
   color: var(--dark-gray);
   line-height: 1.8;
 }
-.featured__image img {
-  width: 100%;
-}
+
 .featured__btn {
   color: var(--white-color);
   background-color: var(--primary-color);
@@ -261,6 +260,39 @@ a {
 
 .featured__btn .fas {
   margin-left: 1rem;
+}
+
+/* News Letter */
+.news-letter {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.news-letter p {
+  font-size: 1.8rem;
+  color: var(--dark-gray);
+  margin-bottom: 3rem;
+}
+
+.news__form {
+  width: 55%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 2rem;
+}
+
+.news__email {
+  outline: none;
+  border: 3px solid var(--primary-color-tint);
+  transition: 0.3s;
+  border-radius: 3px;
+  padding: 1.5rem 2rem;
+  font-size: 1.8rem;
+}
+
+.news__email:focus {
+  border: 3px solid var(--primary-color);
 }
 
 /* Footer */
@@ -287,6 +319,11 @@ a {
   display: flex;
   gap: 3.5rem;
   justify-content: center;
+  transition: 0.3s;
+}
+
+.footer__social a:hover {
+  color: var(--primary-color);
 }
 
 .footer__social .fab {
@@ -298,9 +335,9 @@ a {
 /* Media Query */
 
 /* Tablet */
-@media (max-width: 769px) {
+@media (max-width: 912px) {
   body {
-    /* padding: 3rem; */
+    padding: 3rem;
   }
 
   .header {
@@ -342,14 +379,25 @@ a {
   .featured {
     flex-direction: column;
   }
+
+  .featured__image img {
+    width: 100%;
+  }
+
+  .news__form {
+    width: auto;
+  }
 }
 
 /* Mobile */
 @media (max-width: 425px) {
-  /* .header {
+  body {
+    padding: 2rem;
+  }
+  .header {
     padding: 0;
     margin-bottom: 2rem;
-  } */
+  }
 
   .banner__title {
     font-size: 2.8rem;
@@ -373,5 +421,12 @@ a {
 
   .featured {
     flex-direction: column;
+  }
+
+  .news__form {
+    width: 100%;
+    grid-template-columns: 1fr;
+    margin: 0;
+    row-gap: 2rem;
   }
 }
