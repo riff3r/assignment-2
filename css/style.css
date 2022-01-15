@@ -20,7 +20,6 @@ html {
 
 body {
   color: var(--black-color);
-
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
 }
@@ -127,10 +126,17 @@ a {
 .banner__right {
   position: relative;
   margin-left: auto;
+  transition: 0.3s;
+  overflow: hidden;
 }
 
 .banner__right img {
+  transition: 0.3s;
   width: 100%;
+}
+
+.banner__right:hover img {
+  transform: scale(1.2);
 }
 
 .banner__right::before {
@@ -262,10 +268,31 @@ a {
   margin-left: 1rem;
 }
 
+/* Services */
+
+.services {
+  margin-bottom: 8rem;
+}
+.services .headline {
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+}
+
+.services .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2.5rem;
+}
+.services .fas {
+  color: var(--primary-color);
+  font-size: 4rem;
+}
+
 /* News Letter */
 .news-letter {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 8rem;
 }
 
 .news-letter p {
@@ -336,12 +363,12 @@ a {
 
 /* Tablet */
 @media (max-width: 912px) {
-  body {
+  .container {
     padding: 3rem;
   }
 
   .header {
-    padding: 0;
+    padding: 2rem;
     margin-bottom: 4rem;
   }
 
@@ -375,6 +402,9 @@ a {
     gap: 3rem;
     padding: 2rem;
   }
+  .ecommerce__logos img {
+    width: 100%;
+  }
 
   .featured {
     flex-direction: column;
@@ -382,6 +412,9 @@ a {
 
   .featured__image img {
     width: 100%;
+  }
+  .services .grid {
+    grid-template-columns: 1fr;
   }
 
   .news__form {
@@ -391,11 +424,11 @@ a {
 
 /* Mobile */
 @media (max-width: 425px) {
-  body {
+  .container {
     padding: 2rem;
   }
   .header {
-    padding: 0;
+    padding: 2rem;
     margin-bottom: 2rem;
   }
 
@@ -417,10 +450,19 @@ a {
 
   .grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .featured {
     flex-direction: column;
+  }
+  .featured__title {
+    font-size: 2.4rem;
+  }
+
+  .featured__text {
+    align-items: center;
+    text-align: center;
   }
 
   .news__form {
