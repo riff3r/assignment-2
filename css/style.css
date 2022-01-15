@@ -55,6 +55,7 @@ a {
 .btn-primary {
   color: var(--white-color);
   background-color: var(--primary-color);
+  animation: rotate360 2s 1;
 }
 
 /* Animation */
@@ -111,6 +112,7 @@ a {
 
 .btn .fas {
   margin-left: 1.5rem;
+  animation: rotate360 2s 2.1s 1;
 }
 
 .banner__title {
@@ -131,7 +133,7 @@ a {
 }
 
 .banner__right img {
-  transition: 0.3s;
+  transition: 1s;
   width: 100%;
 }
 
